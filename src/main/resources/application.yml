@@ -1,0 +1,20 @@
+datasource:
+  master:
+    url: jdbc:postgresql://localhost:5432/my_database
+    username: postgres
+    password: my_password
+  slave:
+    url: jdbc:postgresql://localhost:5433/my_database
+    username: postgres
+    password: my_password
+
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+
+logging:
+  level:
+    root: debug
