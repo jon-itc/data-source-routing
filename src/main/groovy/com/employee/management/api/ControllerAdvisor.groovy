@@ -14,11 +14,9 @@ class ControllerAdvisor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(DataNotFoundException.class)
     ResponseEntity<Object> handleDataNotFoundException() {
-
         Map<String, Object> body = new LinkedHashMap<>()
         body.put("timestamp", LocalDateTime.now())
-        body.put("message", "City not found")
-
+        body.put("message", "Data not found")
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND)
     }
 
